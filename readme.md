@@ -1,6 +1,6 @@
 # Azure Function Using Command Line
 
-## Setup on https://online.visualstudio.com using browser
+## Setup on Visual Studio Onlince
 
 * [Reference](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function-azure-cli)
 * Install [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#v2):
@@ -33,3 +33,4 @@ az functionapp create --resource-group $nameResourceGroup --consumption-plan-loc
 * Publish function: `cd ./HelloWorld && func azure functionapp publish trgos-hello-world`
 * [Access function logs](https://markheath.net/post/three-ways-view-error-logs-azure-functions)
 * Advanced logging [options](https://stackify.com/logging-azure-functions/)
+* Connect using a browser: https://trgos-hello-world.azurewebsites.net/api/HelloWorld?name=John 
