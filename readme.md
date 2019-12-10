@@ -15,8 +15,7 @@ sudo apt-get install azure-functions-core-tools -y
 ## Development
 
 * Clone the repo
-* Modify code
-* Publish to an existing function: `cd ./HelloWorld && func azure functionapp publish trgos-hello-world`
+* Modify the code
 
 ## Steps to create and deploy from scratch
 
@@ -38,7 +37,10 @@ az storage account create --name $nameStorageAccount --location $location --reso
 az functionapp create --resource-group $nameResourceGroup --consumption-plan-location $location \
 --name trgos-hello-world --storage-account  $nameStorageAccount --runtime dotnet
 ```
-* Publish function: `cd ./HelloWorld && func azure functionapp publish trgos-hello-world`
+
+## What's next
+
+* Publish the function: `cd ./HelloWorld && func azure functionapp publish trgos-hello-world`
 * [Access function logs](https://markheath.net/post/three-ways-view-error-logs-azure-functions)
-* Advanced logging [options](https://stackify.com/logging-azure-functions/)
+* Advanced logging future [options](https://stackify.com/logging-azure-functions/)
 * Connect using a browser: https://trgos-hello-world.azurewebsites.net/api/HelloWorld?name=John 
