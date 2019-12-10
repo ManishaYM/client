@@ -29,13 +29,22 @@ namePrefix=authpoc
 nameResourceGroup=${namePrefix}-resource-group
 nameStorageAccount=${namePrefix}storage
 location=centralus
+functionName=trgos-hello-world
 az group create --name $nameResourceGroup --location $location
 az storage account create --name $nameStorageAccount --location $location --resource-group $nameResourceGroup
 ```
 * Create function:
 ```
 az functionapp create --resource-group $nameResourceGroup --consumption-plan-location $location \
---name trgos-hello-world --storage-account  $nameStorageAccount --runtime dotnet
+--name $functionName --storage-account  $nameStorageAccount --runtime dotnet
+```
+* To configure [CORS](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#cors):
+```
+az functionapp cors remove -g $nameResourceGroup -n $functionName --allowed-origins
+
+az functionapp cors add --name $functionName \
+--resource-group $nameResourceGroup \
+--allowed-origins "*"
 ```
 
 ## What's next
