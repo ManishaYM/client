@@ -11,6 +11,15 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsof
 sudo apt-get update
 sudo apt-get install azure-functions-core-tools -y
 ```
+
+## Development
+
+* Clone the repo
+* Modify code
+* Publish to an existing function: `cd ./HelloWorld && func azure functionapp publish trgos-hello-world`
+
+## Steps to create and deploy from scratch
+
 * Create app project: `func init HelloWorld`
 * Create HttpTrigger: `cd HelloWorld && func new --name HelloWorld --template "HttpTrigger"`
 * Select `dotnet` from the options presented and continue to the next step(s)
